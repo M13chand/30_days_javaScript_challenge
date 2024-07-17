@@ -115,5 +115,51 @@ for (table = 1; table <= 10; table++) {
   console.log(multiplicationTable);
 }
 
-// Pattern Printing Script: Write a script that prints a pattern of stars using a nested loop.
+//3. Pattern Printing Script: Write a script that prints a pattern of stars using a nested loop.
 
+const rows = 5;
+
+for (let i = 1; i <= rows; i++) {
+  let line = "";
+
+  // Add leading spaces
+  for (let j = 1; j <= rows - i; j++) {
+    line += " ";
+  }
+
+  // Add asterisks
+  for (let k = 1; k <= (2 * i - 1); k++) {
+    line += "*";
+  }
+
+  // Print the current line
+  console.log(line);
+}
+
+
+//     *
+//    ***
+//   *****
+//  *******
+// *********
+
+// 4. Sum  Calculation Script : Write a script that calculates the sums of numbers from 1 to wo using a while loop.
+
+let sum1 = 0;
+number = 1;
+while (number <= 10) {
+  sum1 += number;
+  number++;
+}
+console.log(`The total sum of 1-10 is:`, sum1);
+
+
+// 5. Factorial Calculation Script : Write a script that prints the factorial of a number using a do..while loop.
+let number1 = 5;
+let fact = 1;
+let f = 1;
+do {
+  fact *= f;
+  f++;
+} while (f <= number1)
+console.log(`Factorial fo ${number1} is:`, fact);
