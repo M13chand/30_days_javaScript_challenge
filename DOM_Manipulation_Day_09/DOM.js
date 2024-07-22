@@ -68,7 +68,32 @@ function changeAttribute() {
 }
 
 // Task 8:Add and Remove a CSS class to from an HTML element.
+function addClass() {
+  const element = document.getElementById('myElement');
+  element.classList.add("color");
+}
+
+function removeClass() {
+  const element = document.getElementById('myElement');
+  element.classList.remove("color");
+}
+
+// Activity 5: Event Handling.
+// Task 9:Add a click event listener to a button that changes the text content of a paragraph.
+
+
+const paragraph = document.getElementById('myParagraph');
+paragraph.addEventListener('click', () => {
+  paragraph.textContent = "This is Changed text content";
+});
 
 
 
 
+
+// Task 10:Add a mouseover event listener to  a  element that changes its border color.
+
+const element = document.getElementById('mouseOver');
+element.addEventListener('mouseover', () => {
+  element.style.borderColor = "green";
+});

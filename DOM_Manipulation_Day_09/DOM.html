@@ -15,6 +15,20 @@
       width: 300px;
       height: 300px;
     }
+
+    /* Task 8 */
+
+    .color {
+      background-color: rgb(208, 157, 16);
+    }
+
+    /* Task 10 */
+    #mouseOver {
+      border: 2px solid black;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+    }
   </style>
   <head>
     <meta charset="UTF-8" />
@@ -68,11 +82,19 @@
     </section>
 
     <!-- Task 8 -->
-    <h1>Add and Remove a class</h1>
-    <section>
+    <section id="myElement">
+      <h1>Add and Remove a class</h1>
       <button onclick="addClass()">ADD</button>
       <button onclick="removeClass()">Remove</button>
     </section>
+
+    <!-- Task 9 -->
+    <section>
+      <h1 id="myParagraph">Change the Text of Paragraph</h1>
+    </section>
+    <!-- Task 10 -->
+    <div id="mouseOver">Hover over me!</div>
+
     <script src="DOM.js"></script>
   </body>
 </html>
