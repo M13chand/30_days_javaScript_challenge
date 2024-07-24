@@ -84,10 +84,84 @@ handlePromiseReject();
 
 // Activity 4: Fetching Data from an API
 
-// Task 6: Use the fetch API to get data from a public API and log the response data tk the console using promise.
+// Task 6: Use the fetch API to get data from a public API and log the response data to the console using promise.
+
+let getData = fetch('https://dummyjson.com/users')
+  .then((response) => {
+    console.log('The status code is :', response.status);
+    console.log('Message :', response.ok);
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  })
 
 
+// Task 7: Use the fetch API to get data from a public API and log the response data to the console using Async-await.
+
+let getDataAsync = async () => {
+  try {
+    let response = await fetch('https://dummyjson.com/users');
+    let data = await response.json();
+    console.log(data);
+
+  } catch (error) {
+    console.log('Error:', error);
+  }
+}
+getDataAsync();
+
+// Activity 5: Fetching Data from an API
+// Task 8: Use Promise.all to wait for multiple promises to resolve and then log all their values.
+
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log("First Promise");
+    resolve(10);
+  }, 1000);
+});
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log("Second Promise");
+    resolve(20);
+  }, 2000);
+
+});
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log("Third Promise");
+    resolve(30);
+  }, 3000);
+
+});
+const promise4 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log("Fourth Promise");
+    resolve(40);
+  }, 4000);
+});
+
+Promise.all([promise1, promise2, promise3, promise4]).then((result) => {
+  console.log("Result:", result);
+}).catch(error => console.log(error));
 
 
-// Task 6: Use the fetch API to get data from a public API and log the response data tk the console using Async-await.
+// Task 9: Use Promise.race() to log the value of the first promise that resolves among multiple promises.
 
+
+const p1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("First P1");
+  }, 3000);
+});
+const p2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Second P2");
+
+  }, 2000);
+
+});
+const Promises = [p1, p2];
+Promise.race(Promises).then((result) => {
+  console.log("The first promise Resolved is:", result)
+}).catch(err => console.log("Error:", err))
