@@ -60,4 +60,46 @@ try {
     console.log("an unexpected error occurred: " + error.message);
   }
 }
-// Task 5:
+
+// Task 5: Write a function that validates user (e.g., checking if a string is not empty) and throws a custom error if the validation fails.Handle the custom error using a try-catch block.
+
+class CustomValidationError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "CustomValidationError";
+  }
+}
+
+const validateString = (input) => {
+  if (input === "") {
+    throw new CustomValidationError("Input cannot be empty");
+  }
+  return input;
+}
+
+try {
+  const result = validateString(""); // Change this value to test with different inputs
+  console.log(result);
+} catch (error) {
+  if (error instanceof CustomValidationError) {
+    console.log("Validation error: " + error.message);
+  } else {
+    console.log("Unexpected error: " + error.message);
+  }
+}
+
+// Activity 4: Error Handling in Promises
+
+// Task 6: Create a promise that randomly resolves or rejects.Use .catch() to handle the rejection and log an appropriate message to the console.
+
+const randomPromise = new Promise((resolve, reject) => {
+  const randomNumber = Math.random();
+  console.log(randomNumber)
+  if (randomNumber > 0.5) {
+
+    resolve('promise Resolved');
+  } else {
+    reject('Promise rejected');
+  }
+}).catch(error => console.log('error:', error));
+
